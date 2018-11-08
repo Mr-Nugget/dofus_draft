@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Dofus Draft</title>
+        <link rel="stylesheet" href="CSS/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+        <link rel="icon" href="res/eca.png">
+        <script type="text/javascript" src="JS/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+    <body onload="fademyimage();">
+        <header>
+            <div id="titre">
+                <h1>Dofus Draft - Version 0.2 </h1>
+            </div>
+        </header>
+        <section>
+            <div id="classes" hidden="true">
+                <div class="entier">
+                    <div class="fonction-name">
+                        <h3>Pilliers :</h3>
+                    </div>
+                    <div id="pillier">
+                        <div id="osa" onclick="myclick(this);">
+                            <img src="res/osa.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="eni" onclick="myclick(this);">
+                            <img src="res/eni.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="xel" onclick="myclick(this);">
+                            <img src="res/xel.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="feca" onclick="myclick(this);">
+                            <img src="res/feca.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="sacri" onclick="myclick(this);">
+                            <img src="res/sacri.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="entier">
+                    <div class="fonction-name">
+                        <h3>Erodeurs :</h3>
+                    </div>
+                    <div id="erodeur">
+                        <div id="iop" onclick="myclick(this);">
+                            <img src="res/iop.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="eca" onclick="myclick(this);">
+                            <img src="res/eca.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="sram" onclick="myclick(this);">
+                            <img src="res/sram.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">               
+                        </div>
+                        <div id="cra" onclick="myclick(this);">
+                            <img src="res/cra.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">   
+                        </div>
+                        <div id="roub" onclick="myclick(this);">
+                            <img src="res/roub.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="ougi" onclick="myclick(this);">
+                            <img src="res/ougi.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="entier">
+                    <div class="fonction-name">
+                        <h3>Sous-Pilliers :</h3>
+                    </div>
+                    <div id="sous-pillier">
+                        <div id="enu" onclick="myclick(this);">
+                            <img src="res/enu.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="steam" onclick="myclick(this);">
+                            <img src="res/steam.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="zob" onclick="myclick(this);">
+                            <img src="res/zob.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="panda" onclick="myclick(this);">
+                            <img src="res/panda.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="sadi" onclick="myclick(this);">
+                            <img src="res/sadi.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="elio" onclick="myclick(this);">
+                            <img src="res/elio.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                        <div id="hupper" onclick="myclick(this);">
+                            <img src="res/hupper.png">
+                            <img class="pick-img" src="res/pick.png" hidden="true">
+                            <img class="ban-img" src="res/ban.png" hidden="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="equipes">
+                <div id="equipe1">
+                    <h2>Equipe A</h2>
+                    <div class="banpick">
+                        <div class="ban">
+                            <h3>Bans</h3>
+                        </div>
+                        <div class="pick">
+                            <h3>Pick</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="fleches">
+                    <img src="res/left-arrow-red.png">
+                    <img src="res/right-arrow-red.png">
+                    <img src="res/left-arrow-green.png">
+                    <img src="res/right-arrow-green.png">
+                    <img src="res/right-arrow-red.png">
+                    <img src="res/left-arrow-red.png">
+                    <img src="res/right-arrow-red.png">
+                    <img src="res/left-arrow-red.png">
+                    <img src="res/right-arrow-green.png">
+                    <img src="res/left-arrow-green.png">
+                    <img src="res/left-arrow-red.png">
+                    <img src="res/right-arrow-red.png">
+                    <img src="res/left-arrow-green.png">
+                    <img src="res/right-arrow-green.png">
+                </div>
+                <div id="equipe2">
+                    <h2>Equipe B</h2>
+                    <div class="banpick">
+                        <div class="ban">
+                            <h3>Bans</h3>
+                        </div>
+                        <div class="pick">
+                            <h3>Pick</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="btn-div">
+                <div id="back-button">
+                     <button id="back" onclick="back();" disabled="true">
+                       <img src="res/back.dms">
+                    </button>
+                </div>
+                <div id="reset-button">
+                     <button id="reset" onclick="reset();">
+                       <img src="res/reset.png">
+                    </button>
+                </div>
+            </div>
+        </section>
+        <div id="alert-fond" hidden="true"></div>
+         <div id="alert-end" hidden="true">
+                <h2>Recap</h2>
+                <div id="recap-equipe">
+                    <div class="recap-ban-pick">
+                        <div id="recap-equipe1">
+                            <h2>Equipe A</h2>
+                        </div>
+                        <div id="ban-equipe1"> 
+                            <h3>Bans :</h3>   
+                        </div>
+                    </div>
+                    <div class="recap-ban-pick">
+                        <div id="recap-equipe2">
+                            <h2>Equipe B</h2>
+                        </div>
+                        <div id="ban-equipe2">
+                            <h3>Bans :</h3>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <button id="btn-quit" hidden="true" onclick="quit_recap();">
+            X
+        </button>
+    </body>
+</html>
