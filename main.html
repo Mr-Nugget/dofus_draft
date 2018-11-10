@@ -67,12 +67,12 @@
                         <div id="sram" onclick="myclick(this);">
                             <img src="res/sram.png">
                             <img class="pick-img" src="res/pick.png" hidden="true">
-                            <img class="ban-img" src="res/ban.png" hidden="true">               
+                            <img class="ban-img" src="res/ban.png" hidden="true">
                         </div>
                         <div id="cra" onclick="myclick(this);">
                             <img src="res/cra.png">
                             <img class="pick-img" src="res/pick.png" hidden="true">
-                            <img class="ban-img" src="res/ban.png" hidden="true">   
+                            <img class="ban-img" src="res/ban.png" hidden="true">
                         </div>
                         <div id="roub" onclick="myclick(this);">
                             <img src="res/roub.png">
@@ -132,13 +132,16 @@
             <div id="equipes">
                 <div id="equipe1">
                     <h2>Equipe A</h2>
-                    <div class="banpick">
-                        <div class="ban">
-                            <h3>Bans</h3>
-                        </div>
-                        <div class="pick">
-                            <h3>Pick</h3>
-                        </div>
+                    <div class="pick">
+                          <h3>Picks</h3>
+                          <div class="pick_img">
+                            <img src="res/xel_carte.jpg" alt="" id="img_pick0">
+                            <img src="res/xel_carte.jpg" alt="" id="img_pick3">
+                            <img src="res/xel_carte.jpg" alt="" id="img_pick4">
+                          </div>
+                    </div>
+                    <div class="ban">
+                          <h3>Bans</h3>
                     </div>
                 </div>
                 <div id="fleches">
@@ -158,17 +161,20 @@
                     <img src="res/right-arrow-green.png">
                 </div>
                 <div id="equipe2">
-                    <h2>Equipe B</h2>
-                    <div class="banpick">
-                        <div class="ban">
-                            <h3>Bans</h3>
+                  <h2>Equipe B</h2>
+                  <div class="pick">
+                        <h3>Picks</h3>
+                        <div class="pick_img">
+                          <img src="res/xel_carte.jpg" alt="" id="img_pick1">
+                          <img src="res/xel_carte.jpg" alt="" id="img_pick2">
+                          <img src="res/xel_carte.jpg" alt="" id="img_pick5">
                         </div>
-                        <div class="pick">
-                            <h3>Pick</h3>
-                        </div>
-                    </div>
+                  </div>
+                  <div class="ban">
+                        <h3>Bans</h3>
+                  </div>
                 </div>
-            </div>
+              </div>
             <div id="btn-div">
                 <div id="back-button">
                      <button id="back" onclick="back();" disabled="true">
@@ -182,30 +188,5 @@
                 </div>
             </div>
         </section>
-        <div id="alert-fond" hidden="true"></div>
-         <div id="alert-end" hidden="true">
-                <h2>Recap</h2>
-                <div id="recap-equipe">
-                    <div class="recap-ban-pick">
-                        <div id="recap-equipe1">
-                            <h2>Equipe A</h2>
-                        </div>
-                        <div id="ban-equipe1"> 
-                            <h3>Bans :</h3>   
-                        </div>
-                    </div>
-                    <div class="recap-ban-pick">
-                        <div id="recap-equipe2">
-                            <h2>Equipe B</h2>
-                        </div>
-                        <div id="ban-equipe2">
-                            <h3>Bans :</h3>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <button id="btn-quit" hidden="true" onclick="quit_recap();">
-            X
-        </button>
     </body>
 </html>

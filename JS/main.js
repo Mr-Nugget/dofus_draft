@@ -1,4 +1,5 @@
 var cpt = 0;
+var cpt_pick = 0;
 var pick = [false, false, true, true, false, false, false, false, true, true, false, false, true, true];
 var team = [1,2,1,2,2,1,2,1,2,1,1,2,1,2];
 var undo = new Array();
@@ -8,13 +9,11 @@ function myclick (perso){
     var id = perso.attributes["id"].value;
     $("#back").prop('disabled', false);
     if(pick[cpt]){
-        $("#equipe"+team[cpt]+" .pick").append("<span id='span-"+id+"'>"+id+"</span>");
+        $("#equipe"+team[cpt]+" #img_pick"+cpt_pick).replaceWith('<img src="res/'+id+'_carte.jpg">');
         $("#"+id+" .pick-img").fadeIn(300);
-        $("#recap-equipe"+team[cpt]).append("<img src='res/"+id+"-recap.jpg' id='img-recap-"+id+"'><h3 id='text-recap-"+id+"'>"+id+"</h3>");
+        cpt_pick++;
     }else{
-        $("#equipe"+team[cpt]+" .ban").append("<span id='span-"+id+"'>"+id+"</span>");
         $("#"+id+" .ban-img").fadeIn(300);
-        $("#ban-equipe"+team[cpt]).append("<div><span>"+id+"</span></div>");
     }
     if(cpt == pick.length-1){
         $("#current_team h3").replaceWith("<h3>Fin de la draft</h3>");
@@ -22,6 +21,7 @@ function myclick (perso){
         $("#alert-fond").css("width", "100%");
         $("#alert-end").fadeIn(700);
         $("#btn-quit").fadeIn(700);
+        $("#fleches").children().eq(cpt).css("opacity", 0.2);
     }else{
         $("#fleches").children().eq(cpt).css("opacity", 0.2);
         cpt++;
@@ -91,17 +91,11 @@ function reset(){
                 </div>\
             </div>");
     cpt = 0;
+    cpt_pick = 0;
     undo.splice(0, undo.length);
     $("#fleches").children().css("opacity", 1);
 }
 
-function quit_recap(){
-        $("#alert-fond").css("height", "0%");
-        $("#alert-fond").css("width", "0%");
-        $("#alert-end").hide();
-        $("#btn-quit").hide();
-        reset();
-}
 function fademyimage(){
     $("#classes").show();
     $("#classes div").hide(0).fadeIn(500);
