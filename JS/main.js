@@ -11,7 +11,6 @@ function myclick (perso){
     $("#back").prop('disabled', false);
     if(pick[cpt]){
         $("#img_pick"+cpt_pick).attr('src', 'res/'+id+'_carte.jpg');
-        $("#cache"+cpt_pick).fadeOut(300);
         $("#"+id+" .pick-img").fadeIn(300);
         cpt_pick++;
     }else{
@@ -59,5 +58,26 @@ function back(){
 }
 
 function reset(){
-    location.reload();
+    cpt=0;
+    cpt_ban =0;
+    cpt_pick=0;
+
+    $("#pillier div, #sous-pillier div, #erodeur div").css("cursor", "pointer");
+    $("#pillier div, #sous-pillier div, #erodeur div").attr("onclick", "myclick(this);");
+    $("#pillier div, #sous-pillier div, #erodeur div").css("opacity", "1");
+    $("#back").prop('disabled', false);
+
+    $("#back img").css('cursor', 'pointer');
+    $("#back img").css('opacity', '1');
+
+    $(".pick-img").fadeOut(300);
+    $(".ban-img").fadeOut(300);
+
+    for (var i = 0; i < 8; i++) {
+      $("#img_ban"+i).attr('src', 'res/basic_ban.png');
+    }
+    for (var i = 0; i < 6; i++) {
+      $("#img_pick"+i).attr('src', 'res/cache.jpg');
+    }
+
 }

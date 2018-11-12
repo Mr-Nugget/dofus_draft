@@ -175,15 +175,6 @@ header h1 {
   margin-left: 2.5vh;
 }
 
-.superposer{
-  position: relative;
-}
-
-#cache0, #cache1, #cache2, #cache3, #cache4, #cache5{
-  position: absolute;
-  top : 0%;
-  left : 0%;
-}
 #equipe1{
     display: flex;
     flex-direction: row;
