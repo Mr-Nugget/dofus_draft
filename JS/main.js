@@ -9,7 +9,8 @@ function myclick (perso){
     var id = perso.attributes["id"].value;
     $("#back").prop('disabled', false);
     if(pick[cpt]){
-        $("#equipe"+team[cpt]+" #img_pick"+cpt_pick).replaceWith('<img src="res/'+id+'_carte.jpg">');
+        $("#equipe"+team[cpt]+" #img_pick"+cpt_pick).attr('src', 'res/'+id+'_carte.jpg');
+        $("#equipe"+team[cpt]+" #cache"+cpt_pick).fadeOut(300);
         $("#"+id+" .pick-img").fadeIn(300);
         cpt_pick++;
     }else{
@@ -22,6 +23,10 @@ function myclick (perso){
         if(cpt >= pick.length){
           $("#pillier div, #sous-pillier div, #erodeur div").css("cursor", "default");
           $("#pillier div, #sous-pillier div, #erodeur div").attr("onclick", "");
+          $("#pillier div, #sous-pillier div, #erodeur div").css("opacity", "0.5");
+          $("#back").prop('disabled', true);
+          $("#back img").css('cursor', 'default');
+          $("#back img").css('opacity', '0.5');
         }
     }
     perso.onclick = null;
@@ -39,42 +44,17 @@ function back(){
     $("#"+id).attr("onclick", "myclick(this);");
     undo.splice(indice, 1);
     if(pick[cpt]){
+        cpt_pick--;
         $("#"+id+" .pick-img").fadeOut(300);
+        $("#equipe"+team[cpt]+" #cache"+cpt_pick).fadeIn(300);
+
     }else{
         $("#"+id+" .ban-img").fadeOut(300);
     }
 }
 
 function reset(){
-
-    for (var i = 0; i < undo.length; i++) {
-        var id = undo[i].attributes["id"].value;
-        $("#"+id).attr("onclick", "myclick(this);");
-    }
-    $(".ban-img").fadeOut(300);
-    $(".pick-img").fadeOut(300);
-    $("#equipe1 .pick").html("<div class=\"pick\">\
-          <h3>Picks</h3>\
-          <div class=\"pick_img\">\
-            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick0\">\
-            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick3\">\
-            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick4\">\
-          </div>\
-    </div>");
-    $("#equipe2 .pick").html("<div class=\"pick\">\
-          <h3>Picks</h3>\
-          <div class=\"pick_img\">\
-            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick1\">\
-            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick2\">\
-            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick5\">\
-          </div>\
-    </div>");
-    cpt = 0;
-    cpt_pick = 0;
-    undo.splice(0, undo.length);
-    $("#fleches").children().css("opacity", 1);
-    $("#pillier div, #sous-pillier div, #erodeur div").attr("onclick", "myclick(this);");
-    $("#pillier div, #sous-pillier div, #erodeur div").css("cursor", "pointer");
+    location.reload();
 }
 
 function fademyimage(){
