@@ -1,5 +1,6 @@
 var cpt = 0;
 var cpt_pick = 0;
+var cpt_ban = 0;
 var pick = [false, false, true, true, false, false, false, false, true, true, false, false, true, true];
 var team = [1,2,1,2,2,1,2,1,2,1,1,2,1,2];
 var undo = new Array();
@@ -9,12 +10,14 @@ function myclick (perso){
     var id = perso.attributes["id"].value;
     $("#back").prop('disabled', false);
     if(pick[cpt]){
-        $("#equipe"+team[cpt]+" #img_pick"+cpt_pick).attr('src', 'res/'+id+'_carte.jpg');
-        $("#equipe"+team[cpt]+" #cache"+cpt_pick).fadeOut(300);
+        $("#img_pick"+cpt_pick).attr('src', 'res/'+id+'_carte.jpg');
+        $("#cache"+cpt_pick).fadeOut(300);
         $("#"+id+" .pick-img").fadeIn(300);
         cpt_pick++;
     }else{
         $("#"+id+" .ban-img").fadeIn(300);
+        $("#img_ban"+cpt_ban).attr('src', 'res/'+id+'_ban.jpg');
+        cpt_ban++;
     }
     if(cpt >= pick.length){
     }else{
@@ -50,14 +53,11 @@ function back(){
 
     }else{
         $("#"+id+" .ban-img").fadeOut(300);
+        cpt_ban--;
+        $("#img_ban"+cpt_ban).attr('src', 'res/basic_ban.png');
     }
 }
 
 function reset(){
     location.reload();
-}
-
-function fademyimage(){
-    $("#classes").show();
-    $("#classes div").hide(0).fadeIn(500);
 }

@@ -149,12 +149,30 @@ header h1 {
 
 .ban{
   border : 1px solid white;
+  text-align: center;
+}
+
+.ban_section{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 2vh;
+}
+
+.ban_section img{
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  height: 5vh;
+  width: auto;
+  margin-bottom: 1vh;
 }
 
 .pick img{
   width: auto;
   height: 25vh;
-  margin-right: 5vh;
+  margin-right: 2.5vh;
+  margin-left: 2.5vh;
 }
 
 .superposer{
