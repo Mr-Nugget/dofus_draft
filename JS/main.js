@@ -48,7 +48,7 @@ function back(){
     if(pick[cpt]){
         cpt_pick--;
         $("#"+id+" .pick-img").fadeOut(300);
-        $("#equipe"+team[cpt]+" #cache"+cpt_pick).fadeIn(300);
+        $("#img_pick"+cpt_pick).attr('src', 'res/cache.jpg');
 
     }else{
         $("#"+id+" .ban-img").fadeOut(300);
@@ -72,6 +72,8 @@ function reset(){
 
     $(".pick-img").fadeOut(300);
     $(".ban-img").fadeOut(300);
+
+    $("#fleches img").css("opacity", "1");
 
     for (var i = 0; i < 8; i++) {
       $("#img_ban"+i).attr('src', 'res/basic_ban.png');
