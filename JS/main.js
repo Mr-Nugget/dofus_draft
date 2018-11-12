@@ -15,24 +15,16 @@ function myclick (perso){
     }else{
         $("#"+id+" .ban-img").fadeIn(300);
     }
-    if(cpt == pick.length-1){
-        $("#current_team h3").replaceWith("<h3>Fin de la draft</h3>");
-        $("#alert-fond").css("height", "100%");
-        $("#alert-fond").css("width", "100%");
-        $("#alert-end").fadeIn(700);
-        $("#btn-quit").fadeIn(700);
-        $("#fleches").children().eq(cpt).css("opacity", 0.2);
+    if(cpt >= pick.length){
     }else{
         $("#fleches").children().eq(cpt).css("opacity", 0.2);
         cpt++;
-        if(team[cpt] == 1){
-            $("#current_team h3").replaceWith("<h3>Equipe A</h3>");
-        }else{
-            $("#current_team h3").replaceWith("<h3>Equipe B</h3>");
+        if(cpt >= pick.length){
+          $("#pillier div, #sous-pillier div, #erodeur div").css("cursor", "default");
+          $("#pillier div, #sous-pillier div, #erodeur div").attr("onclick", "");
         }
     }
     perso.onclick = null;
-    $("#"+id).css("cursor", "");
 }
 
 
@@ -51,14 +43,6 @@ function back(){
     }else{
         $("#"+id+" .ban-img").fadeOut(300);
     }
-    $("#span-"+id).remove();
-    $("#img-recap-"+id).remove();
-    $("#text-recap-"+id).remove();
-    if(team[cpt] == 1){
-            $("#current_team h3").replaceWith("<h3>Equipe A</h3>");
-        }else{
-            $("#current_team h3").replaceWith("<h3>Equipe B</h3>");
-        }
 }
 
 function reset(){
@@ -69,31 +53,28 @@ function reset(){
     }
     $(".ban-img").fadeOut(300);
     $(".pick-img").fadeOut(300);
-    $(".banpick").html("<div class='ban'><h3>Bans</h3></div><div class='pick'><h3>Pick</h3></div>")
-    $("#current_team h3").replaceWith("<h3>Equipe A</h3>");
-    $("#alert-end").html("<h2>Recap</h2>\
-                <div id='recap-equipe'>\
-                    <div class='recap-ban-pick'>\
-                        <div id='recap-equipe1'>\
-                            <h2>Equipe A</h2>\
-                        </div>\
-                        <div id='ban-equipe1'>\
-                            <h3>Bans :</h3>\
-                        </div>\
-                </div>\
-                <div class='recap-ban-pick'>\
-                        <div id='recap-equipe2'>\
-                            <h2>Equipe B</h2>\
-                        </div>\
-                        <div id='ban-equipe2'>\
-                            <h3>Bans :</h3>\
-                        </div>\
-                </div>\
-            </div>");
+    $("#equipe1 .pick").html("<div class=\"pick\">\
+          <h3>Picks</h3>\
+          <div class=\"pick_img\">\
+            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick0\">\
+            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick3\">\
+            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick4\">\
+          </div>\
+    </div>");
+    $("#equipe2 .pick").html("<div class=\"pick\">\
+          <h3>Picks</h3>\
+          <div class=\"pick_img\">\
+            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick1\">\
+            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick2\">\
+            <img src=\"res/xel_carte.jpg\" alt=\"\" id=\"img_pick5\">\
+          </div>\
+    </div>");
     cpt = 0;
     cpt_pick = 0;
     undo.splice(0, undo.length);
     $("#fleches").children().css("opacity", 1);
+    $("#pillier div, #sous-pillier div, #erodeur div").attr("onclick", "myclick(this);");
+    $("#pillier div, #sous-pillier div, #erodeur div").css("cursor", "pointer");
 }
 
 function fademyimage(){
