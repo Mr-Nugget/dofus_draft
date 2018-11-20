@@ -15,8 +15,29 @@
                 <h1>Dofus Draft - Version 1.0 </h1>
             </div>
         </header>
-        <section>
-            <div id="classes" hidden="true">
+        <div id="preloadedImages" hidden="true">
+          <img src="res/osa_carte.jpg" alt="">
+          <img src="res/zob_carte.jpg" alt="">
+          <img src="res/eca_carte.jpg" alt="">
+          <img src="res/feca_carte.jpg" alt="">
+          <img src="res/eni_carte.jpg" alt="">
+          <img src="res/enu_carte.jpg" alt="">
+          <img src="res/cra_carte.jpg" alt="">
+          <img src="res/elio_carte.jpg" alt="">
+          <img src="res/hupper_carte.jpg" alt="">
+          <img src="res/xel_carte.jpg" alt="">
+          <img src="res/sadi_carte.jpg" alt="">
+          <img src="res/sacri_carte.jpg" alt="">
+          <img src="res/iop_carte.jpg" alt="">
+          <img src="res/sram_carte.jpg" alt="">
+          <img src="res/ougi_carte.jpg" alt="">
+          <img src="res/panda_carte.jpg" alt="">
+          <img src="res/roub_carte.jpg" alt="">
+          <img src="res/steam_carte.jpg" alt="">
+
+        </div>
+        <section hidden="true">
+            <div id="classes">
                 <div class="entier">
                     <div class="fonction-name">
                         <h3>Pilliers :</h3>
@@ -129,9 +150,16 @@
                     </div>
                 </div>
             </div>
+            <div id="nom_equipe">
+              <div>
+                <h1>Equipe A</h1>
+              </div>
+              <div>
+                <h1>Equipe B</h1>
+              </div>
+            </div>
             <div id="equipes">
                 <div id="equipe1">
-                    <h2>Equipe A</h2>
                     <div class="pick">
                           <h3>Picks</h3>
                           <div class="pick_section">
@@ -167,15 +195,6 @@
                     <img src="res/right-arrow-green.png">
                 </div>
                 <div id="equipe2">
-                  <h2>Equipe B</h2>
-                  <div class="pick">
-                        <h3>Picks</h3>
-                        <div class="pick_section">
-                            <img src="res/cache.jpg" alt="" id="img_pick1">
-                            <img src="res/cache.jpg" alt="" id="img_pick2">
-                            <img src="res/cache.jpg" alt="" id="img_pick5">
-                        </div>
-                  </div>
                   <div class="ban">
                         <h3>Bans</h3>
                         <div class="ban_section">
@@ -185,17 +204,25 @@
                           <img src="res/basic_ban.png" alt="" id="img_ban7">
                         </div>
                   </div>
+                  <div class="pick">
+                        <h3>Picks</h3>
+                        <div class="pick_section">
+                            <img src="res/cache.jpg" alt="" id="img_pick1">
+                            <img src="res/cache.jpg" alt="" id="img_pick2">
+                            <img src="res/cache.jpg" alt="" id="img_pick5">
+                        </div>
+                  </div>
                 </div>
               </div>
             <div id="btn-div">
                 <div id="back-button">
                      <button id="back" onclick="back();" disabled="true">
-                       <img src="res/back.dms">
+                       <span>Back</span>
                     </button>
                 </div>
                 <div id="reset-button">
-                     <button id="reset" onclick="reset();">
-                       <img src="res/reset.png">
+                     <button id="reset" onclick="reset();" disabled="true">
+                       <span>Reset</span>
                     </button>
                 </div>
             </div>
